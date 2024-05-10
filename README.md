@@ -1,2 +1,3 @@
-# xioa
-Asp.net core 6 + vue
+# Avalonia Ursa
+.net 8.0 
+Avalonia UI 
