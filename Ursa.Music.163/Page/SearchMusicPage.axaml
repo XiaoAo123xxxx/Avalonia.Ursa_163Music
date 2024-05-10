@@ -1,0 +1,60 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Ursa.Music._163.Page.SearchMusicPage"
+             xmlns:vm="clr-namespace:Ursa.Music._163.ViewModels"
+             xmlns:Ursa="https://irihi.tech/ursa"
+             x:DataType="vm:MainViewModel">
+    <ScrollViewer>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ItemsControl ItemsSource="{Binding SearchMusic.SearchMusicCollection}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="10" Margin="10" Width="1500" HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                            <Border.Styles>
+                                <Style Selector="Border:pointerover">
+                                    <Setter Property="Background" Value="#B2B2B2"></Setter>
+                                </Style>
+                            </Border.Styles>
+                            <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Left"
+                                        VerticalAlignment="Center">
+                                <Grid ColumnDefinitions="50,300,150,200,100,100,*">
+                                    <TextBlock Margin="10,5" Width="50" Grid.Column="0"
+                                               Text="{Binding Id}" FontSize="20" Foreground="#FFF" />
+                                    <TextBlock Margin="10,5" Width="300" Grid.Column="1"
+                                               Text="{Binding Name}" FontSize="20" Foreground="#FFF" />
+                                    <TextBlock Margin="10,5" Width="150" Grid.Column="2"
+                                               Text="{Binding MusicPeople}" FontSize="20" Foreground="#FFF" />
+                                    <TextBlock Margin="10,5" Width="200" Grid.Column="4"
+                                               Text="{Binding IncludeAt}" FontSize="20" Foreground="#FFF" />
+                                    <Ursa:IconButton Grid.Column="5" HorizontalAlignment="Center"
+                                                     VerticalAlignment="Center" Padding="0"
+                                                     Classes="Danger"
+                                                     CommandParameter="{Binding}"
+                                                     Command="{Binding ViewPlayMusicCommand}"
+                                                     Theme="{DynamicResource SolidIconButton}"
+                                                     Background="Transparent"
+                                                     BorderBrush="Transparent"
+                                                     Margin="10,0,0,0">
+                                        <Ursa:IconButton.Icon>
+                                            <Image Height="10" Width="10"
+                                                   Source="avares://Ursa.Music.163/Assets/Footer/下载.png" />
+                                        </Ursa:IconButton.Icon>
+                                        <ToolTip.Tip>
+                                            <TextBlock Text="加入播放列表"></TextBlock>
+                                        </ToolTip.Tip>
+                                    </Ursa:IconButton>
+                                    <TextBlock Margin="10,5" Width="100" Grid.Column="6"
+                                               Text="{Binding FromUrl}" FontSize="20" Foreground="#FFF" />
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

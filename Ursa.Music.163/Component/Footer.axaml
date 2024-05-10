@@ -1,0 +1,428 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1500" d:DesignHeight="100"
+             xmlns:Ursa="https://irihi.tech/ursa"
+             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+             xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+             xmlns:vm="clr-namespace:Ursa.Music._163.ViewModels"
+             xmlns:converters="clr-namespace:Ursa.Music._163.Converter"
+             x:Class="Ursa.Music._163.Component.Footer"
+             x:DataType="vm:MainViewModel">
+    <UserControl.Resources>
+        <converters:IconPathConverter x:Key="IconConverter" />
+    </UserControl.Resources>
+    <UserControl.Styles>
+        <Style Selector="Thumb">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border
+                            Height="5" Width="5"
+                            Background="Transparent"
+                            BorderBrush="#FC3D4B"
+                            BorderThickness="1.5"
+                            CornerRadius="10" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style Selector="ToggleButton#action:checked">
+            <Setter Property="Opacity" Value="1"></Setter>
+            <Style.Animations>
+                <Animation Duration="0:0:10" IterationCount="INFINITE">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="RotateTransform.Angle" Value="1" />
+                    </KeyFrame>
+                    <KeyFrame Cue="25%">
+                        <Setter Property="RotateTransform.Angle" Value="90" />
+                    </KeyFrame>
+                    <KeyFrame Cue="50%">
+                        <Setter Property="RotateTransform.Angle" Value="180" />
+                    </KeyFrame>
+                    <KeyFrame Cue="75%">
+                        <Setter Property="RotateTransform.Angle" Value="270" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="RotateTransform.Angle" Value="360" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+
+        <Style Selector="FlyoutPresenter.SpecialClass">
+            <Setter Property="Background" Value="#2D2D38" />
+        </Style>
+    </UserControl.Styles>
+    <Panel>
+        <Grid RowDefinitions="Auto,*">
+            <Border Grid.Row="0" Height="1" Background="#42424C" />
+            <Grid Grid.Row="1" ColumnDefinitions="*,*,*">
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="50,0,0,0">
+                    <ToggleButton Name="action" IsHitTestVisible="False"
+                                  IsChecked="{Binding Footer.IsPlayer}"
+                                  Background="Transparent"
+                                  Height="65"
+                                  Width="65"
+                                  BorderThickness="0"
+                                  Padding="0">
+                        <Grid VerticalAlignment="Center" x:Name="PlayIcon" Margin="0">
+                            <Border BorderBrush="#0C0C0C" BorderThickness="10" CornerRadius="50" Height="60" Width="60">
+                                <Border Height="40" Width="40" Background="Transparent" CornerRadius="50">
+                                    <Image Height="40" Width="40" Stretch="UniformToFill"
+                                           Source="avares://Ursa.Music.163/Assets/Footer/NowPlay.jpg">
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="20" RadiusY="20" Center="20,20" />
+                                        </Image.Clip>
+                                    </Image>
+                                </Border>
+                            </Border>
+                        </Grid>
+                    </ToggleButton>
+
+                    <Grid>
+                        <TextBlock FontSize="20" Margin="10,0,0,50" VerticalAlignment="Bottom"
+                                   Foreground="#FFF" Text="{Binding Footer.NowPlayerMusicName}">
+                        </TextBlock>
+
+                        <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,20">
+                            <Ursa:IconButton HorizontalAlignment="Center" Padding="0"
+                                             Classes="Danger"
+                                             Theme="{DynamicResource SolidIconButton}"
+                                             Background="Transparent"
+                                             BorderBrush="Transparent"
+                                             Margin="10,0,0,0">
+                                <Ursa:IconButton.Icon>
+                                    <Image Height="20" Width="20" Margin="0"
+                                           Source="avares://Ursa.Music.163/Assets/Footer/添加收藏.png" />
+                                </Ursa:IconButton.Icon>
+                                <ToolTip.Tip>
+                                    <TextBlock Background="Transparent" Foreground="#FFF">添加收藏</TextBlock>
+                                </ToolTip.Tip>
+                            </Ursa:IconButton>
+                            <Ursa:IconButton HorizontalAlignment="Center" Padding="0"
+                                             Classes="Danger"
+                                             Theme="{DynamicResource SolidIconButton}"
+                                             Background="Transparent"
+                                             BorderBrush="Transparent"
+                                             Margin="10,0,0,0">
+                                <Ursa:IconButton.Icon>
+                                    <Image Height="20" Width="20" Margin="0"
+                                           Source="avares://Ursa.Music.163/Assets/Footer/评论999+.png" />
+                                </Ursa:IconButton.Icon>
+                                <ToolTip.Tip>
+                                    <TextBlock Background="Transparent" Foreground="#FFF">查看评论</TextBlock>
+                                </ToolTip.Tip>
+                            </Ursa:IconButton>
+                            <Ursa:IconButton HorizontalAlignment="Center" Padding="0"
+                                             Classes="Danger"
+                                             Theme="{DynamicResource SolidIconButton}"
+                                             Background="Transparent"
+                                             BorderBrush="Transparent"
+                                             Margin="10,0,0,0">
+                                <Ursa:IconButton.Icon>
+                                    <Image Height="20" Width="20" Margin="0"
+                                           Source="avares://Ursa.Music.163/Assets/Footer/转发.png" />
+                                </Ursa:IconButton.Icon>
+                                <ToolTip.Tip>
+                                    <TextBlock Background="Transparent" Foreground="#FFF">分享</TextBlock>
+                                </ToolTip.Tip>
+                            </Ursa:IconButton>
+                            <Ursa:IconButton HorizontalAlignment="Center" Padding="0"
+                                             Classes="Danger"
+                                             Theme="{DynamicResource SolidIconButton}"
+                                             Background="Transparent"
+                                             BorderBrush="Transparent"
+                                             Margin="10,0,0,0">
+                                <Ursa:IconButton.Icon>
+                                    <Image Height="20" Width="20" Margin="0"
+                                           Source="avares://Ursa.Music.163/Assets/Footer/下载.png" />
+                                </Ursa:IconButton.Icon>
+                                <ToolTip.Tip>
+                                    <TextBlock Background="Transparent" Foreground="#FFF">下载</TextBlock>
+                                </ToolTip.Tip>
+                            </Ursa:IconButton>
+                        </DockPanel>
+                    </Grid>
+                </StackPanel>
+
+                <Grid Grid.Column="1">
+
+                    <StackPanel Orientation="Horizontal" Margin="0,20"
+                                VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <Grid ColumnDefinitions="*,2*,*">
+                            <Ursa:IconButton Grid.Column="0"
+                                             Classes="Danger"
+                                             Theme="{DynamicResource SolidIconButton}"
+                                             Background="Transparent"
+                                             BorderBrush="Transparent"
+                                             Width="35"
+                                             Command="{Binding Footer.ChangeLikeCommand}"
+                                             Margin="0,0,20,0">
+                                <Ursa:IconButton.Icon>
+                                    <Image Height="20" Width="20" Margin="0"
+                                           Source="{Binding Footer.PlayLike,Converter={StaticResource IconConverter}}" />
+                                </Ursa:IconButton.Icon>
+                            </Ursa:IconButton>
+
+                            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                <Ursa:IconButton HorizontalContentAlignment="Center"
+                                                 Padding="0"
+                                                 Classes="Danger"
+                                                 Theme="{DynamicResource SolidIconButton}"
+                                                 Background="Transparent"
+                                                 BorderBrush="Transparent"
+                                                 Width="33"
+                                                 Command="{Binding Footer.PreviousSongCommand}"
+                                                 Margin="0,0,20,0">
+                                    <Ursa:IconButton.Icon>
+                                        <Image Height="15" Width="15" Margin="0"
+                                               Source="avares://Ursa.Music.163/Assets/Footer/上一曲.png" />
+                                    </Ursa:IconButton.Icon>
+                                </Ursa:IconButton>
+
+                                <Ursa:IconButton HorizontalContentAlignment="Center"
+                                                 Padding="0"
+                                                 Classes="Danger"
+                                                 Theme="{DynamicResource SolidIconButton}"
+                                                 Background="Transparent"
+                                                 BorderBrush="Transparent"
+                                                 Width="55"
+                                                 Command="{Binding Footer.ChangePlayCommand}"
+                                                 Margin="0,0,20,0">
+                                    <Ursa:IconButton.Icon>
+                                        <Border Background="#E3364F" CornerRadius="50" Padding="0"
+                                                HorizontalAlignment="Center">
+                                            <Image Height="15" Width="15" Margin="15"
+                                                   Source="{Binding Footer.PlayStatus,Converter={StaticResource IconConverter}}" />
+                                        </Border>
+                                    </Ursa:IconButton.Icon>
+                                </Ursa:IconButton>
+
+                                <Ursa:IconButton HorizontalContentAlignment="Center"
+                                                 Padding="0"
+                                                 Classes="Danger"
+                                                 Theme="{DynamicResource SolidIconButton}"
+                                                 Background="Transparent"
+                                                 BorderBrush="Transparent"
+                                                 Width="33"
+                                                 Command="{Binding Footer.NextSongCommand}"
+                                                 Margin="0,0,0,0">
+                                    <Ursa:IconButton.Icon>
+
+                                        <Image Height="15" Width="15" Margin="0"
+                                               Source="avares://Ursa.Music.163/Assets/Footer/下一曲.png" />
+                                    </Ursa:IconButton.Icon>
+                                </Ursa:IconButton>
+                            </StackPanel>
+
+                            <Ursa:IconButton HorizontalContentAlignment="Center" Grid.Column="2"
+                                             Padding="0"
+                                             Classes="Danger"
+                                             Theme="{DynamicResource SolidIconButton}"
+                                             Background="Transparent"
+                                             BorderBrush="Transparent"
+                                             Width="33"
+                                             Command="{Binding Footer.ChangeModeCommand}"
+                                             Margin="20,0,0,0">
+                                <Ursa:IconButton.Icon>
+                                    <Image Height="20" Width="20" Margin="0"
+                                           Source="{Binding Footer.PlayerMode.ModeIcon,Converter={StaticResource IconConverter}}" />
+                                </Ursa:IconButton.Icon>
+                            </Ursa:IconButton>
+                        </Grid>
+                    </StackPanel>
+
+                    <DockPanel VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center">
+                        <TextBlock Foreground="#4D4D56" Text="{Binding Footer.NowTime}"></TextBlock>
+                        <Slider Margin="10,0" TickPlacement="None"
+                                TextElement.Foreground="#FC3D4B"
+                                TickFrequency="1" Background="#4D4D56" FontSize="1"
+                                Minimum="0" Maximum="{Binding Footer.MaxPlan}" Value="{Binding Footer.NowPlan}"
+                                Width="400">
+                            <Slider.Resources>
+                                <SolidColorBrush x:Key="SliderThumbBackground">#FC3D4B</SolidColorBrush>
+                                <GridLength x:Key="SliderPreContentMargin">5</GridLength>
+                            </Slider.Resources>
+                            <i:Interaction.Behaviors>
+                                <ia:EventTriggerBehavior EventName="PointerCaptureLost">
+                                    <ia:InvokeCommandAction Command="{Binding Footer.MoveMusicLengthCommand}" />
+                                </ia:EventTriggerBehavior>
+                            </i:Interaction.Behaviors>
+                        </Slider>
+                        <TextBlock Foreground="#4D4D56" Text="{Binding Footer.AllTime}"></TextBlock>
+                    </DockPanel>
+                </Grid>
+
+                <Grid Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,50,0">
+                        <Border CornerRadius="5" Background="Transparent" Height="20" Padding="0" BorderThickness="1"
+                                BorderBrush="#FFF">
+                            <Button Margin="0" BorderThickness="0" Padding="0" Foreground="#FFF" FontSize="10">
+                                无损
+                                <Button.Flyout>
+                                    <Flyout Placement="Top" FlyoutPresenterClasses="SpecialClass">
+                                        <StackPanel Width="450">
+                                            <DockPanel HorizontalAlignment="Left">
+                                                <TextBlock FontSize="20" Foreground="#FFF">歌曲音质</TextBlock>
+                                                <Ursa:IconButton HorizontalAlignment="Center"
+                                                                 VerticalAlignment="Bottom" Padding="0"
+                                                                 Classes="Danger"
+                                                                 Theme="{DynamicResource SolidIconButton}"
+                                                                 Background="Transparent"
+                                                                 BorderBrush="Transparent"
+                                                                 Margin="10,0,0,0">
+                                                    <Ursa:IconButton.Icon>
+                                                        <Image Height="10" Width="10"
+                                                               Source="avares://Ursa.Music.163/Assets/Footer/提示.png" />
+                                                    </Ursa:IconButton.Icon>
+                                                    <ToolTip.Tip>
+                                                        <TextBlock Background="Transparent" Foreground="#FFF">了解音质</TextBlock>
+                                                    </ToolTip.Tip>
+                                                </Ursa:IconButton>
+                                            </DockPanel>
+
+                                            <TextBlock Margin="0,10" HorizontalAlignment="Left" FontSize="10"
+                                                       Foreground="#6B6B73">
+                                                空间音感
+                                            </TextBlock>
+                                            <StackPanel Margin="0,5" HorizontalAlignment="Left">
+                                                <Button Width="450">
+                                                    <DockPanel HorizontalAlignment="Left" Width="450">
+                                                        <Image Height="20" Width="20"
+                                                               Source="avares://Ursa.Music.163/Assets/Footer/弧形环绕.png" />
+                                                        <StackPanel Margin="10,0,0,0">
+                                                            <TextBlock FontSize="15" Foreground="#FFF">沉浸环绕声(Surround Audio)</TextBlock>
+                                                            <TextBlock FontSize="8" Foreground="#929298">25.0M 沉浸体验，最高5.1声道</TextBlock>
+                                                        </StackPanel>
+                                                        <Image Height="20" Margin="10,0,0,0"
+                                                               Source="avares://Ursa.Music.163/Assets/Footer/svip.png" />
+                                                        <TextBlock VerticalAlignment="Center"
+                                                                   HorizontalAlignment="Right"
+                                                                   Margin="0,0,20,0"
+                                                                   Width="30"
+                                                                   FontSize="20" Foreground="#D7383A">
+                                                            √
+                                                        </TextBlock>
+                                                    </DockPanel>
+                                                </Button>
+                                            </StackPanel>
+
+                                            <TextBlock Margin="0,10" HorizontalAlignment="Left" FontSize="10"
+                                                       Foreground="#6B6B73">
+                                                音质
+                                            </TextBlock>
+                                            <StackPanel Margin="0,5" HorizontalAlignment="Left">
+                                                <Button Width="450">
+                                                    <DockPanel HorizontalAlignment="Left" Width="450">
+                                                        <Image Height="20" Width="20"
+                                                               Source="avares://Ursa.Music.163/Assets/Footer/hq-line.png" />
+                                                        <StackPanel Margin="10,0,0,0">
+                                                            <TextBlock FontSize="15" Foreground="#FFF">极高(HQ)</TextBlock>
+                                                            <TextBlock FontSize="8" Foreground="#929298">8.6M 近CD品质的细节体验，最高320kbps</TextBlock>
+                                                        </StackPanel>
+                                                        <Image Height="20" Margin="10,0,0,0"
+                                                               Source="avares://Ursa.Music.163/Assets/Footer/vip.png" />
+                                                        <TextBlock VerticalAlignment="Center"
+                                                                   HorizontalAlignment="Right"
+                                                                   Margin="0,0,20,0"
+                                                                   Width="30"
+                                                                   FontSize="20" Foreground="#D7383A">
+                                                            √
+                                                        </TextBlock>
+                                                    </DockPanel>
+                                                </Button>
+                                                <Button Width="450" Margin="0,10,0,0">
+                                                    <DockPanel HorizontalAlignment="Left" Width="450">
+                                                        <Image Height="20" Width="20"
+                                                               Source="avares://Ursa.Music.163/Assets/Footer/标记.png" />
+                                                        <StackPanel Margin="10,0,0,0">
+                                                            <TextBlock FontSize="15" Foreground="#FFF">标准</TextBlock>
+                                                            <TextBlock FontSize="8" Foreground="#929298">3.5M 128kbps</TextBlock>
+                                                        </StackPanel>
+                                                        <TextBlock VerticalAlignment="Center"
+                                                                   HorizontalAlignment="Right"
+                                                                   Margin="0,0,20,0"
+                                                                   Width="30"
+                                                                   FontSize="20" Foreground="#D7383A">
+                                                            √
+                                                        </TextBlock>
+                                                    </DockPanel>
+                                                </Button>
+                                            </StackPanel>
+
+                                        </StackPanel>
+                                    </Flyout>
+                                </Button.Flyout>
+                            </Button>
+                        </Border>
+
+                        <Button Height="30"
+                                VerticalAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                Padding="0" Margin="15,0,0,0"
+                                FontSize="17" Foreground="#FFF">
+                            词
+                        </Button>
+
+                        <Ursa:IconButton HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0"
+                                         Classes="Danger"
+                                         Theme="{DynamicResource SolidIconButton}"
+                                         Background="Transparent"
+                                         BorderBrush="Transparent"
+                                         Margin="15,0,0,0">
+                            <Ursa:IconButton.Icon>
+                                <Image Height="20" Width="20" Source="avares://Ursa.Music.163/Assets/Footer/星环音效.png" />
+                            </Ursa:IconButton.Icon>
+                            <ToolTip.Tip>
+                                <TextBlock Background="Transparent" Foreground="#FFF">会员音效</TextBlock>
+                            </ToolTip.Tip>
+                        </Ursa:IconButton>
+
+                        <Ursa:IconButton HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0"
+                                         Classes="Danger"
+                                         Theme="{DynamicResource SolidIconButton}"
+                                         Background="Transparent"
+                                         BorderBrush="Transparent"
+                                         Margin="15,0,0,0">
+                            <Ursa:IconButton.Icon>
+                                <Image Height="20" Width="20" Source="avares://Ursa.Music.163/Assets/Footer/播放列表.png" />
+                            </Ursa:IconButton.Icon>
+                        </Ursa:IconButton>
+
+                        <Ursa:IconButton HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0"
+                                         Classes="Danger"
+                                         Theme="{DynamicResource SolidIconButton}"
+                                         Background="Transparent"
+                                         BorderBrush="Transparent"
+                                         Margin="15,0,0,0">
+                            <Ursa:IconButton.Icon>
+                                <Image Height="20" Width="20" Source="avares://Ursa.Music.163/Assets/Footer/声音开.png" />
+                            </Ursa:IconButton.Icon>
+                        </Ursa:IconButton>
+
+                        <Slider Margin="5,0,0,0" TickPlacement="None" HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                TextElement.Foreground="#C7C7CA" Name="volume"
+                                TickFrequency="1" Background="#42424C" FontSize="1"
+                                Minimum="0" Maximum="100" Value="{Binding Footer.Volume}" Width="50">
+                            <Slider.Resources>
+                                <SolidColorBrush x:Key="SliderThumbBackground">#C7C7CA</SolidColorBrush>
+                                <GridLength x:Key="SliderPreContentMargin">5</GridLength>
+                            </Slider.Resources>
+                            <ToolTip.Tip>
+                                <TextBlock FontSize="20" Background="Transparent" Foreground="#FFF"
+                                           Text="{Binding Footer.Volume,StringFormat='音量:{0}'}">
+                                </TextBlock>
+                            </ToolTip.Tip>
+                        </Slider>
+
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Panel>
+</UserControl>

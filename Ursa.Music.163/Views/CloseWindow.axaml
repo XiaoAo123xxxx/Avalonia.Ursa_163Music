@@ -1,0 +1,87 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        WindowStartupLocation="CenterOwner"
+        xmlns:Ursa="https://irihi.tech/ursa"
+        x:Class="Ursa.Music._163.Views.CloseWindow"
+        Title="CloseWindow">
+    <Window.Styles>
+        <Style Selector="Window">
+            <Setter Property="ExtendClientAreaToDecorationsHint" Value="True"></Setter>
+            <Setter Property="ExtendClientAreaChromeHints" Value="NoChrome"></Setter>
+            <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1"></Setter>
+            <Setter Property="SystemDecorations" Value="None"></Setter>
+            <Setter Property="CanResize" Value="False"></Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="Transparent" Opacity="0"></SolidColorBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Styles>
+    <Border Name="Border" CornerRadius="5" Height="300" Width="500" Background="#2D2D38">
+        <Grid RowDefinitions="Auto,*,Auto">
+            <StackPanel HorizontalAlignment="Right" Grid.Row="0">
+                <Ursa:IconButton HorizontalContentAlignment="Center"
+                                 Padding="0"
+                                 Classes="Danger"
+                                 Click="Close_This_Window_Click"
+                                 Theme="{DynamicResource SolidIconButton}"
+                                 Background="Transparent"
+                                 BorderBrush="Transparent"
+                                 Width="33"
+                                 Margin="20,20,20,0">
+                    <Ursa:IconButton.Icon>
+                        <Image Height="20" Width="20" Margin="0"
+                               Source="../Assets/Header/关闭.png" />
+                    </Ursa:IconButton.Icon>
+                </Ursa:IconButton>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <UniformGrid HorizontalAlignment="Center">
+                    <UniformGrid.Styles>
+                        <Style Selector="RadioButton">
+                            <Setter Property="Margin" Value="4" />
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </UniformGrid.Styles>
+                    <StackPanel HorizontalAlignment="Left">
+
+                        <RadioButton Background="Transparent" BorderThickness="0"
+                                     IsChecked="False" Name="Close_App"
+                                     Theme="{DynamicResource CardRadioButton}" Foreground="#FFF">
+                            <TextBlock Width="100" Foreground="#FFF">关闭程序</TextBlock>
+                            <RadioButton.Resources>
+                                <SolidColorBrush x:Key="RadioButtonCheckIconDefaultBackground">#E33646</SolidColorBrush>
+                                <SolidColorBrush x:Key="RadioButtonCheckIconDefaultBorderBrush">#E33646</SolidColorBrush>
+                                <SolidColorBrush x:Key="RadioButtonCheckIconPointeroverBackground">#E33646</SolidColorBrush>
+                                <SolidColorBrush x:Key="RadioButtonCheckIconPointeroverBorderBrush">#E33646</SolidColorBrush>
+                                <SolidColorBrush x:Key="RadioButtonCardCheckPointeroverBorderBrush">#E33646</SolidColorBrush>
+                            </RadioButton.Resources>
+                        </RadioButton>
+
+                        <RadioButton Background="Transparent" IsChecked="True" BorderThickness="0"
+                                     Theme="{DynamicResource CardRadioButton}">
+                            <TextBlock Width="100" Foreground="#FFF">最小化到托盘</TextBlock>
+                            <RadioButton.Resources>
+                                <SolidColorBrush x:Key="RadioButtonCheckIconDefaultBackground">#E33646</SolidColorBrush>
+                                <SolidColorBrush x:Key="RadioButtonCheckIconDefaultBorderBrush">#E33646</SolidColorBrush>
+                                <SolidColorBrush x:Key="RadioButtonCheckIconPointeroverBackground">#E33646</SolidColorBrush>
+                                <SolidColorBrush x:Key="RadioButtonCheckIconPointeroverBorderBrush">#E33646</SolidColorBrush>
+                                <SolidColorBrush x:Key="RadioButtonCardCheckPointeroverBorderBrush">#E33646</SolidColorBrush>
+                            </RadioButton.Resources>
+                        </RadioButton>
+                    </StackPanel>
+                </UniformGrid>
+            </StackPanel>
+
+            <DockPanel HorizontalAlignment="Right" Grid.Row="2">
+                <Button Click="Yes_Button_Click" Margin="10,10,0,10" Background="#E33646" Foreground="#FFF">确定</Button>
+                <Button Click="Close_This_Window_Click" Margin="10,10" Background="#E33646" Foreground="#FFF">取消</Button>
+            </DockPanel>
+        </Grid>
+    </Border>
+</Window>

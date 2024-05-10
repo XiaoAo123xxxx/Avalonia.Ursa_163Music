@@ -1,0 +1,96 @@
+is_global = true
+build_property.AvaloniaNameGeneratorIsEnabled = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Ursa.Music.163
+build_property.ProjectDir = E:\git仓库\xioa\Ursa.Music.163\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[E:/git仓库/xioa/Ursa.Music.163/App.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Component/Body.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Component/Footer.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Component/Header.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Component/NavBtn.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/BlogPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/CloudMusicCollectionPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/CommunityPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/Component/LoverContentStartHeader.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/Component/LoverMusicContent.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/Component/MusicPlayer.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/Component/RecommendForMeCard.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/Component/RecommendForMeHeader.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/DownLoadPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/LocalMusicPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/LoverContentPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/MyBlogPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/MyCollectionPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/MyMusicCloudPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/PrivateRoamingPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/RecentlyPlayedPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/RecommendForMePage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Page/SearchMusicPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Views/CloseWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Views/MainView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[E:/git仓库/xioa/Ursa.Music.163/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

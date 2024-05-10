@@ -1,0 +1,17 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Ursa.Music._163.App"
+             xmlns:u-semi="https://irihi.tech/ursa/themes/semi"
+             xmlns:mvvm="clr-namespace:Ursa.Music._163.ViewModels"
+             RequestedThemeVariant="Default">
+    <Application.Styles>
+        <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" />
+        <u-semi:SemiTheme Locale="zh-CN" />
+
+    </Application.Styles>
+    <Application.Resources>
+        <ResourceDictionary>
+            <mvvm:MainViewModel x:Key="ViewModel" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

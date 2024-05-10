@@ -1,0 +1,165 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignHeight="100"
+             xmlns:vm="clr-namespace:Ursa.Music._163.ViewModels"
+             xmlns:Ursa="https://irihi.tech/ursa"
+             x:DataType="vm:MainViewModel"
+             x:Class="Ursa.Music._163.Component.Header">
+    <UserControl.Styles>
+        <Style Selector="FlyoutPresenter.SpecialClass">
+            <Setter Property="Background" Value="#2D2D38" />
+        </Style>
+    </UserControl.Styles>
+    <Border Margin="0,10,0,0" CornerRadius="8" Height="100" Background="Transparent">
+        <Border Name="HeaderBorder" CornerRadius="8" Height="100" Background="Transparent">
+            <Grid Background="Transparent" ColumnDefinitions="*,*">
+                <StackPanel Margin="50,0,0,0" Grid.Column="0" VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Background="Transparent"
+                            Orientation="Horizontal">
+                    <Border Margin="10,0" CornerRadius="8" BorderBrush="#e6e6e6"
+                            BorderThickness="0.8" Width="25"
+                            Background="Transparent">
+                        <Ursa:IconButton
+                            Classes="Danger"
+                            Theme="{DynamicResource SolidIconButton}"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Width="23"
+                            Padding="0"
+                            Margin="0">
+                            <Ursa:IconButton.Icon>
+                                <Image Width="15" Height="15" Source="../Assets/Header/左箭头.png" />
+                            </Ursa:IconButton.Icon>
+                        </Ursa:IconButton>
+                    </Border>
+                    <Border CornerRadius="8" BorderBrush="#e6e6e6" BorderThickness="0.8" Width="260"
+                            Background="Transparent">
+                        <DockPanel>
+                            <Image Margin="10,0,0,0" Width="25" Height="25" Source="../Assets/Header/搜索.png" />
+                            <TextBox Background="Transparent"
+                                     KeyDown="SearchTextBox_OnKeyDown"
+                                     CaretBrush="#e6e6e6" Name="SearchTextBox"
+                                     Text="{Binding SearchMusic.SearchContent}"
+                                     Width="215" Foreground="#e6e6e6"
+                                     BorderThickness="0" Watermark="Search For Content You Like">
+                                <!-- <TextBox.KeyBindings> -->
+                                <!--     <KeyBinding Gesture="Key.Enter" Command="{Binding SearchMusic.SearchMusicCommand}"/> -->
+                                <!-- </TextBox.KeyBindings> -->
+                                <!-- <i:Interaction.Behaviors> -->
+                                <!--     <ia:EventTriggerBehavior EventName="KeyDown"> -->
+                                <!--         <ia:InvokeCommandAction -->
+                                <!--             CommandParameter="{Binding ElementName=SearchTextBox}" -->
+                                <!--             Command="{Binding SearchMusic.SearchMusicCommand }" /> -->
+                                <!--     </ia:EventTriggerBehavior> -->
+                                <!-- </i:Interaction.Behaviors> -->
+                            </TextBox>
+                        </DockPanel>
+                    </Border>
+                    <Border Margin="10,0" CornerRadius="8"
+                            BorderBrush="#e6e6e6" BorderThickness="0.8" Width="35"
+                            Background="Transparent">
+                        <Ursa:IconButton
+                            Classes="Danger"
+                            Theme="{DynamicResource SolidIconButton}"
+                            Background="Transparent"
+                            HorizontalAlignment="Center"
+                            BorderBrush="Transparent"
+                            Width="25"
+                            Padding="0"
+                            Margin="0">
+                            <Ursa:IconButton.Icon>
+                                <Image Width="15" Height="15" Source="../Assets/Header/麦克风.png" />
+                            </Ursa:IconButton.Icon>
+                        </Ursa:IconButton>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center"
+                            HorizontalAlignment="Right"
+                            Background="Transparent"
+                            Orientation="Horizontal">
+                    <Ursa:IconButton
+                        Classes="Danger"
+                        Theme="{DynamicResource SolidIconButton}"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Width="31"
+                        Margin="5,0,0,0">
+                        <Ursa:IconButton.Icon>
+                            <Image Height="18" Source="../Assets/Header/皮肤.png"></Image>
+                        </Ursa:IconButton.Icon>
+                        <Button.Flyout>
+                            <Flyout Placement="Pointer" FlyoutPresenterClasses="SpecialClass">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                    <Button CommandParameter="3"
+                                            Command="{Binding GlobalConfig.ChangeGlobalColorCommand}">
+                                        <Border Height="30" Width="30" Background="#16DE70" CornerRadius="20"></Border>
+                                    </Button>
+                                    <Button CommandParameter="2"
+                                            Command="{Binding GlobalConfig.ChangeGlobalColorCommand}">
+                                        <Border Height="30" Width="30" Background="#313B61" CornerRadius="20"></Border>
+                                    </Button>
+                                    <Button CommandParameter="1"
+                                            Command="{Binding GlobalConfig.ChangeGlobalColorCommand}">
+                                        <Border Height="30" Width="30" Background="#4D3767" CornerRadius="20"></Border>
+                                    </Button>
+                                </StackPanel>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Ursa:IconButton>
+                    <Ursa:IconButton
+                        Classes="Danger"
+                        Theme="{DynamicResource SolidIconButton}"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Width="29"
+                        Margin="5,0,0,0">
+                        <Ursa:IconButton.Icon>
+                            <Image Height="18" Source="../Assets/Header/小窗口.png"></Image>
+                        </Ursa:IconButton.Icon>
+                    </Ursa:IconButton>
+                    <Ursa:IconButton
+                        Classes="Danger"
+                        Theme="{DynamicResource SolidIconButton}"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Width="28"
+                        Click="MinSize_App_Click"
+                        Margin="5,0,0,0">
+                        <Ursa:IconButton.Icon>
+                            <Image Height="18" Source="../Assets/Header/最小化细.png"></Image>
+                        </Ursa:IconButton.Icon>
+                    </Ursa:IconButton>
+                    <Ursa:IconButton
+                        Classes="Danger"
+                        Click="MaxSize_App_Click"
+                        Theme="{DynamicResource SolidIconButton}"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Width="28"
+                        Margin="5,0,0,0">
+                        <Ursa:IconButton.Icon>
+                            <Image Height="16" Source="../Assets/Header/最大化.png"></Image>
+                        </Ursa:IconButton.Icon>
+                    </Ursa:IconButton>
+                    <Ursa:IconButton
+                        Classes="Danger"
+                        Click="Close_App_Click"
+                        Theme="{DynamicResource SolidIconButton}"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Width="30"
+                        Margin="5,0,40,0">
+                        <Ursa:IconButton.Icon>
+                            <Image Height="18" Source="../Assets/Header/关闭.png"></Image>
+                        </Ursa:IconButton.Icon>
+                    </Ursa:IconButton>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
+</UserControl>

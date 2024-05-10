@@ -1,0 +1,298 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1800" d:DesignHeight="450"
+             xmlns:converters="clr-namespace:Ursa.Music._163.Converter"
+             xmlns:vm="clr-namespace:Ursa.Music._163.ViewModels"
+             x:Class="Ursa.Music._163.Page.Component.RecommendForMeHeader"
+             x:DataType="vm:RecommendForMeRouteViewModel">
+    <UserControl.Resources>
+        <converters:IconPathConverter x:Key="IconConverter" />
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <vm:RecommendForMeRouteViewModel />
+    </UserControl.DataContext>
+    <UserControl.Styles>
+        <Style Selector="FlyoutPresenter.SpecialClass">
+            <Setter Property="Background" Value="#2D2D38" />
+        </Style>
+    </UserControl.Styles>
+    <UserControl.Styles>
+        <Style Selector="Border.main">
+            <Setter Property="Height" Value="250" />
+            <Setter Property="CornerRadius" Value="10"></Setter>
+        </Style>
+        <Style Selector="Border.TopTipBorder">
+            <Setter Property="Height" Value="30" />
+            <Setter Property="CornerRadius" Value="10"></Setter>
+        </Style>
+        <Style Selector="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#1C1F23" />
+        </Style>
+    </UserControl.Styles>
+    <StackPanel Orientation="Horizontal" Margin="0,10">
+        <!-- Card1 -->
+        <Carousel Width="550" Theme="{DynamicResource FullCarousel}">
+            <Carousel.PageTransition>
+                <PageSlide Orientation="Horizontal" Duration="0.25" />
+            </Carousel.PageTransition>
+            <Border Classes="main">
+                <Border.Background>
+                    <ImageBrush Stretch="Fill" Source="avares://Ursa.Music.163/Assets/Recommend/test02.jpg"></ImageBrush>
+                </Border.Background>
+                <Button Padding="0" BorderThickness="0" CommandParameter="test01" Command="{Binding RoutePushCommand}">
+                </Button>
+            </Border>
+
+            <Border Classes="main">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" Source="avares://Ursa.Music.163/Assets/Recommend/test01.jpg"></ImageBrush>
+                </Border.Background>
+                <Button Padding="0" BorderThickness="0" CommandParameter="test02" Command="{Binding RoutePushCommand}">
+                </Button>
+            </Border>
+            <Border Classes="main">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" Source="avares://Ursa.Music.163/Assets/Recommend/test03.jpg"></ImageBrush>
+                </Border.Background>
+                <Button Padding="0" BorderThickness="0" CommandParameter="test03" Command="{Binding RoutePushCommand}">
+                </Button>
+            </Border>
+            <Border Classes="main">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" Source="avares://Ursa.Music.163/Assets/Recommend/test04.jpg"></ImageBrush>
+                </Border.Background>
+                <Button Padding="0" BorderThickness="0" CommandParameter="test04" Command="{Binding RoutePushCommand}">
+
+                </Button>
+            </Border>
+            <Border Classes="main">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" Source="avares://Ursa.Music.163/Assets/Recommend/test05.jpg"></ImageBrush>
+                </Border.Background>
+                <Button Padding="0" BorderThickness="0" CommandParameter="test05" Command="{Binding RoutePushCommand}" />
+            </Border>
+            <Border Classes="main">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" Source="avares://Ursa.Music.163/Assets/Recommend/test06.jpg"></ImageBrush>
+                </Border.Background>
+                <Button Padding="0" BorderThickness="0" CommandParameter="test06" Command="{Binding RoutePushCommand}" />
+            </Border>
+
+            <Border Classes="main">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" Source="avares://Ursa.Music.163/Assets/Recommend/test07.jpg"></ImageBrush>
+                </Border.Background>
+                <Button Padding="0" BorderThickness="0" CommandParameter="test07" Command="{Binding RoutePushCommand}">
+
+                </Button>
+            </Border>
+        </Carousel>
+        <!-- Card2 -->
+        <Border Classes="main" Margin="10,0" Width="530" Height="250" Background="#8c8f90" CornerRadius="10">
+            <Grid RowDefinitions="*,Auto">
+                <Border Height="180" CornerRadius="5" Grid.Row="0" Background="#727480" Margin="10">
+                    <Grid>
+                        <!-- Top left -->
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="10"
+                                   Text="Private roaming" Foreground="#FFF">
+                        </TextBlock>
+                        <!-- Top right -->
+                        <Border Height="125" Margin="10" Width="280" CornerRadius="5" Background="#696B76"
+                                HorizontalAlignment="Right" VerticalAlignment="Top">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Padding="0" BorderThickness="0" Background="Transparent">
+                                    <Border CornerRadius="5" Width="90" Height="115">
+                                        <Border.Background>
+                                            <ImageBrush Source="avares://Ursa.Music.163/Assets/Recommend/test03.jpg"></ImageBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <ToolTip.Tip>
+                                        <TextBlock Background="Transparent" Foreground="#FFF">推荐一</TextBlock>
+                                    </ToolTip.Tip>
+                                </Button>
+                                <Button Padding="0" BorderThickness="0" Background="Transparent">
+                                    <Border CornerRadius="5" Width="90" Height="115">
+                                        <Border.Background>
+                                            <ImageBrush Source="avares://Ursa.Music.163/Assets/Recommend/test05.jpg"></ImageBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <ToolTip.Tip>
+                                        <TextBlock Background="Transparent" Foreground="#FFF">推荐二</TextBlock>
+                                    </ToolTip.Tip>
+                                </Button>
+                                <Button Padding="0" BorderThickness="0" Background="Transparent">
+                                    <Border CornerRadius="5" Width="90" Height="115">
+                                        <Border.Background>
+                                            <ImageBrush Source="avares://Ursa.Music.163/Assets/Recommend/test07.jpg"></ImageBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <ToolTip.Tip>
+                                        <TextBlock Background="Transparent" Foreground="#FFF">推荐三</TextBlock>
+                                    </ToolTip.Tip>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+                        <!-- Bottom left -->
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+                            <TextBlock FontSize="15" Margin="0"
+                                       Text="#тамада (Караоке версия)" Foreground="#FFF">
+                            </TextBlock>
+                            <TextBlock FontSize="11" Margin="0" HorizontalAlignment="Left"
+                                       Text="Wooshendoo / AllBo" Foreground="#BFBFC4">
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <!-- footer -->
+                <Panel Grid.Row="1" Height="60">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <Button Height="20" Width="25" BorderThickness="0" Background="Transparent">
+                            <Border Classes="main" Height="20" Width="20" Background="#898A94" BorderBrush="#676975"
+                                    BorderThickness="1">
+                                <Image Height="10" Width="10" Source="avares://Ursa.Music.163/Assets/Footer/喜欢2.png"></Image>
+                            </Border>
+                        </Button>
+                        <Button Margin="20,0" Height="20" Width="25" BorderThickness="0" Background="Transparent">
+                            <Border Classes="main" Height="20" Width="20" Background="#898A94" BorderBrush="#676975"
+                                    BorderThickness="1">
+                                <Image Height="8" Width="8" Source="avares://Ursa.Music.163/Assets/Footer/播放.png"></Image>
+                            </Border>
+                        </Button>
+                        <Button Height="20" Width="25" BorderThickness="0" Background="Transparent">
+                            <Border Classes="main" Height="20" Width="20" Background="#898A94" BorderBrush="#676975"
+                                    BorderThickness="1">
+                                <Image Height="8" Width="8" Source="avares://Ursa.Music.163/Assets/Footer/下一曲.png"></Image>
+                            </Border>
+                        </Button>
+                    </StackPanel>
+                </Panel>
+            </Grid>
+        </Border>
+        <!-- Card3 -->
+        <Border Margin="0,0" Width="250" Height="250" CornerRadius="10">
+            <Border.Background>
+                <ImageBrush Source="avares://Ursa.Music.163/Assets/Header/EndLover.jpg"></ImageBrush>
+            </Border.Background>
+            <Panel HorizontalAlignment="Stretch">
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                    <TextBlock FontSize="20" Text="The Music I Like" Foreground="#FFF" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                    <Button Margin="00,0" Height="30" Width="35" BorderThickness="0" Background="Transparent">
+                        <Border CornerRadius="30" Height="30" Width="30" Background="#898A94" BorderBrush="#FFF"
+                                BorderThickness="1">
+                            <Image Height="15" Width="15" Source="avares://Ursa.Music.163/Assets/Footer/播放.png"></Image>
+                        </Border>
+                    </Button>
+                </StackPanel>
+            </Panel>
+        </Border>
+        <!-- Card4 -->
+        <Border Margin="10,0" Width="250" Height="250" CornerRadius="10">
+            <Border.Background>
+                <ImageBrush Stretch="Fill" Source="{Binding SceneBitMap,Converter={StaticResource IconConverter}}"></ImageBrush>
+            </Border.Background>
+            <Panel HorizontalAlignment="Stretch">
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                    <TextBlock FontSize="20" Text="{Binding SceneHeader}" Foreground="#FFF" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+                    <Button Background="Transparent">
+                        <Border Width="60" Background="#FFF" Opacity="0.5" CornerRadius="20">
+                            <TextBlock FontSize="15" Text="选场景"></TextBlock>
+                        </Border>
+                        <Button.Flyout>
+                            <Flyout Placement="Pointer" FlyoutPresenterClasses="SpecialClass">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                                        <Button Command="{Binding ChangeSceneCommand}"
+                                                CommandParameter="0"
+                                                Height="100" Width="100" Padding="0" BorderThickness="0">
+                                            <Border Height="100" Width="100" CornerRadius="5">
+                                                <Border.Background>
+                                                    <ImageBrush Stretch="UniformToFill"
+                                                                Source="avares://Ursa.Music.163/Assets/Scene/夜晚.jpg" />
+                                                </Border.Background>
+                                                <TextBlock FontWeight="Bold" Foreground="#FFF" FontSize="15" Text="夜晚"></TextBlock>
+                                            </Border>
+                                        </Button>
+                                        <Button Margin="10" Command="{Binding ChangeSceneCommand}"
+                                                CommandParameter="1"
+                                                Height="100" Width="100" Padding="0" BorderThickness="0">
+                                            <Border Height="100" Width="100" CornerRadius="5">
+                                                <Border.Background>
+                                                    <ImageBrush Stretch="UniformToFill"
+                                                                Source="avares://Ursa.Music.163/Assets/Scene/学习.jpg" />
+                                                </Border.Background>
+                                                <TextBlock FontWeight="Bold" Foreground="#FFF" FontSize="15" Text="学习"></TextBlock>
+                                            </Border>
+                                        </Button>
+                                        <Button Command="{Binding ChangeSceneCommand}"
+                                                CommandParameter="2"
+                                                Height="100" Width="100" Padding="0" BorderThickness="0">
+                                            <Border Height="100" Width="100" CornerRadius="5">
+                                                <Border.Background>
+                                                    <ImageBrush Stretch="UniformToFill"
+                                                                Source="avares://Ursa.Music.163/Assets/Scene/工作.jpg" />
+                                                </Border.Background>
+                                                <TextBlock FontWeight="Bold" Foreground="#FFF" FontSize="15" Text="工作"></TextBlock>
+                                            </Border>
+                                        </Button>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                                        <Button Command="{CompiledBinding ChangeSceneCommand}"
+                                                CommandParameter="3"
+                                                Height="100" Width="100" Padding="0" BorderThickness="0">
+                                            <Border Height="100" Width="100" CornerRadius="5">
+                                                <Border.Background>
+                                                    <ImageBrush Stretch="UniformToFill"
+                                                                Source="avares://Ursa.Music.163/Assets/Scene/散步.jpg" />
+                                                </Border.Background>
+                                                <TextBlock FontWeight="Bold" Foreground="#FFF" FontSize="15" Text="散步"></TextBlock>
+                                            </Border>
+                                        </Button>
+                                        <Button Margin="10" Command="{Binding ChangeSceneCommand}"
+                                                CommandParameter="4"
+                                                Height="100" Width="100" Padding="0" BorderThickness="0">
+                                            <Border Height="100" Width="100" CornerRadius="5">
+                                                <Border.Background>
+                                                    <ImageBrush Stretch="UniformToFill"
+                                                                Source="avares://Ursa.Music.163/Assets/Scene/旅行.jpg" />
+                                                </Border.Background>
+                                                <TextBlock FontWeight="Bold" Foreground="#FFF" FontSize="15" Text="旅行"></TextBlock>
+                                            </Border>
+                                        </Button>
+                                        <Button Command="{Binding ChangeSceneCommand}"
+                                                CommandParameter="5"
+                                                Height="100" Width="100" Padding="0" BorderThickness="0">
+                                            <Border Height="100" Width="100" CornerRadius="5">
+                                                <Border.Background>
+                                                    <ImageBrush Stretch="UniformToFill"
+                                                                Source="avares://Ursa.Music.163/Assets/Scene/生活.jpg" />
+                                                </Border.Background>
+                                                <TextBlock FontWeight="Bold" Foreground="#FFF" FontSize="15" Text="生活"></TextBlock>
+                                            </Border>
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                    <Button Margin="00,0" Height="30" Width="35" BorderThickness="0" Background="Transparent">
+                        <Border CornerRadius="30" Height="30" Width="30" Background="#898A94" BorderBrush="#FFF"
+                                BorderThickness="1">
+                            <Image Height="15" Width="15" Source="avares://Ursa.Music.163/Assets/Footer/播放.png"></Image>
+                        </Border>
+                    </Button>
+
+                </StackPanel>
+            </Panel>
+        </Border>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,19 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:component="clr-namespace:Ursa.Music._163.Page.Component"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Ursa.Music._163.Page.RecommendForMePage"
+             xmlns:viewModels="clr-namespace:Ursa.Music._163.ViewModels"
+             x:DataType="viewModels:MainViewModel">
+    <!-- 为我推荐 -->
+    <ScrollViewer>
+        <StackPanel>
+            <!-- header -->
+            <component:RecommendForMeHeader />
+            <!-- 推荐 -->
+            <!-- 精选 -->
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

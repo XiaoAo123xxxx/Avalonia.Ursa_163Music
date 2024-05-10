@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1600" d:DesignHeight="900"
+        x:Class="Ursa.Music._163.Views.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        xmlns:views="clr-namespace:Ursa.Music._163.Views"
+        Icon="/Assets/Wy163.ico"
+        Title="Ursa.Music._163">
+    <Window.Styles>
+        <Style Selector="Window">
+            <Setter Property="ExtendClientAreaToDecorationsHint" Value="True"></Setter>
+            <Setter Property="ExtendClientAreaChromeHints" Value="NoChrome"></Setter>
+            <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1"></Setter>
+            <Setter Property="SystemDecorations" Value="None"></Setter>
+            <Setter Property="CanResize" Value="False"></Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="Transparent" Opacity="0"></SolidColorBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Styles>
+    <Border Name="Border" CornerRadius="8" Background="Transparent" Opacity="1">
+        <views:MainView></views:MainView>
+    </Border>
+</Window>

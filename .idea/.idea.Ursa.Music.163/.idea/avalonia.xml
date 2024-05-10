@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Ursa.Music.163/App.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Component/Body.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Component/Footer.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Component/Header.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Component/NavBtn.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/BlogPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/CloudMusicCollectionPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/CommunityPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/Component/LoverContentStartHeader.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/Component/LoverMusicContent.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/Component/MusicPlayer.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/Component/RecommendForMeCard.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/Component/RecommendForMeHeader.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/DownLoadPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/LocalMusicPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/LoverContentPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/MyBlogPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/MyCollectionPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/MyMusicCloudPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/PrivateRoamingPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/RecentlyPlayedPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/RecommendForMePage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Page/SearchMusicPage.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Themes/NavButtons.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Views/CloseMessageBox.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Views/CloseWindow.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Views/MainView.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+        <entry key="Ursa.Music.163/Views/MainWindow.axaml" value="Ursa.Music.163/Ursa.Music.163.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

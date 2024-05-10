@@ -1,0 +1,55 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="clr-namespace:Ursa.Music._163.ViewModels"
+             x:DataType="vm:MainViewModel"
+             xmlns:convert="clr-namespace:Ursa.Music._163.Converter"
+             xmlns:Ursa="https://irihi.tech/ursa"
+             x:Class="Ursa.Music._163.Page.Component.LoverMusicContent">
+    <UserControl.Resources>
+        <convert:BoolColorConverter x:Key="BoolConverter" />
+    </UserControl.Resources>
+    <ItemsControl ItemsSource="{Binding Footer.LoverMusic}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border CornerRadius="10" Width="1500" Height="50" Margin="10">
+                    <Border.Styles>
+                        <Style Selector="Border:pointerover">
+                            <Setter Property="Background" Value="#B2B2B2"></Setter>
+                        </Style>
+                    </Border.Styles>
+                    <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Left"
+                                VerticalAlignment="Center">
+                        <Grid ColumnDefinitions="60,500,100,*">
+                            <TextBlock Grid.Column="0" FontSize="20" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="{Binding IsPlay,Converter={StaticResource BoolConverter}}"
+                                       Text="{Binding Index}">
+                            </TextBlock>
+                            <TextBlock Name="TextBlock" Grid.Column="1" FontSize="20"
+                                       Foreground="{Binding IsPlay,Converter={StaticResource BoolConverter}}"
+                                       Text="{Binding Content}">
+                            </TextBlock>
+                            <Ursa:IconButton Grid.Column="2" HorizontalAlignment="Center"
+                                             VerticalAlignment="Center" Padding="0"
+                                             Classes="Danger"
+                                             Command="{Binding ChangeMusicCommand}"
+                                             CommandParameter="{Binding ElementName=TextBlock,Path=Text}"
+                                             Theme="{DynamicResource SolidIconButton}"
+                                             Background="Transparent"
+                                             BorderBrush="Transparent"
+                                             Margin="10,0,0,0">
+                                <Ursa:IconButton.Icon>
+                                    <Image Height="10" Width="10"
+                                           Source="avares://Ursa.Music.163/Assets/Footer/播放.png" />
+                                </Ursa:IconButton.Icon>
+                            </Ursa:IconButton>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</UserControl>

@@ -1,0 +1,61 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1500"
+             xmlns:component="clr-namespace:Ursa.Music._163.Component"
+             x:Class="Ursa.Music._163.Component.Body"
+             xmlns:vm="clr-namespace:Ursa.Music._163.ViewModels"
+             x:DataType="vm:MainViewModel">
+    <UserControl.Styles>
+        <Style Selector="GradientStop#action:PropertyChanged">
+            <Style.Animations>
+                <Animation Duration="0:0:0.2">
+                    <KeyFrame Cue="0">
+                        <Setter Property="Color" Value="Red" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Color" Value="Black" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+    </UserControl.Styles>
+    <Panel Background="Transparent">
+        <Border Name="Border" CornerRadius="8,8,0,0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5 0.16" EndPoint="0.15 400">
+                    <GradientStop Color="{Binding GlobalConfig.HeaderColor}" Offset="0.1" />
+                    <GradientStop Color="{Binding GlobalConfig.FooterColor}" Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border Margin="8" CornerRadius="8,8,0,0">
+            <Border.Background>
+                <VisualBrush Stretch="Uniform"
+                             Visual="{Binding 
+                                 ElementName=Border}" />
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="50"></BlurEffect>
+            </Border.Effect>
+        </Border>
+        <Grid Background="Transparent" RowDefinitions="80,*" ColumnDefinitions="250,*">
+            <Panel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                   Background="Transparent">
+                <component:NavBtn />
+            </Panel>
+            <Panel Grid.Row="0" Grid.Column="1"
+                   Background="Transparent">
+                <component:Header />
+            </Panel>
+            <Panel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"
+                   Background="Transparent">
+                <ContentControl Content="{Binding Content}"
+                                Margin="12">
+
+                </ContentControl>
+            </Panel>
+        </Grid>
+    </Panel>
+</UserControl>
